@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block home %}
+    <div class="row">
+        <div class = "col">
+            <form method="post" name="logic_form">
+                <div class="mb-3">
+                    <label for="p" class="form-label">Type the p value:</label>
+                    <input type="text" class="form-control" id="p" name="p" onBlur="setId(this.id)" spellcheck="false" required>
+                </div>
+                <div class="mb-3">
+                    <label for="q" class="form-label">Type the q value:</label>
+                    <input type="text" class="form-control" id="q" name="q" onBlur="setId(this.id)" spellcheck="false" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ege" class="form-label">Type the e value:</label>
+                    <input type="text" class="form-control" id="ege" name="ege" onBlur="setId(this.id)" spellcheck="false" required>
+                </div>
+                <div class="row text-center">
+                    <div class="">
+                        <div class="buttons btn-group me-2" role="group">
+                            <button type="submit" class="btn btn-dark">Generate keys</button>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="{{url_for('encrypting_page')}}">Go to encrypting page</a>
+                    </div>
+                    <div class="text-center mt-2">
+                        <a href="{{url_for('decrypting_page')}}">Go to decrypting page</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class = "col", id="coltable">
+            <div class="text-center mb-4 mt-3"><h4>RSA Public keys (n, e):</h4></div>
+            {% if keys %}
+                {% for i in keys %}
+                    <p class = "mb-2 text-center">{{i}}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block about %}
+    <h2 class="mb-2">About the app:</h2>
+    <p>Flask web application that generate keys, encrypting and decrypting using RSA method.</p>
+    <p><b>Created by:</b> Thiago Ribeiro</p>
+    <p><b>Email:</b> trs57595@gmail.com</p>
+{% endblock %}

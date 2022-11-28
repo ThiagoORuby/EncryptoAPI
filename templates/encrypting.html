@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block home %}
+    <div class="row">
+        <div class = "col">
+            <form method="post" name="logic_form">
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message *:</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" spellcheck="false" onBlur="setId(this.id)" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="n" class="form-label">Type the n value:</label>
+                    <input type="text" class="form-control" id="n" name="n" onBlur="setId(this.id)" spellcheck="false" required>
+                </div>
+                <div class="mb-3">
+                    <label for="e_enc" class="form-label">Type the e value:</label>
+                    <input type="text" class="form-control" id="eenc" name="eenc" onBlur="setId(this.id)" spellcheck="false" required>
+                </div>
+                <div class="row text-center">
+                    <div class="">
+                        <div class="buttons btn-group me-2" role="group">
+                            <button type="submit" class="btn btn-dark">Encrypting Message</button>
+                        </div>
+                        <div class="text-center mt-2">
+                            <p style="color:red">* Just use a-z or A-Z characteres. Any other will be removed from the message.</p>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="{{url_for('decrypting_page')}}">Go to decrypting page</a>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="{{url_for('generate_page')}}">Go to generate keys page</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class = "col", id="coltable">
+            <div class="text-center mb-4 mt-3"><h4>Encrypted Message:</h4></div>
+            {% if message %}
+                <p class = "mb-2 text-center">{{message}}</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block about %}
+    <h2 class="mb-2">About the app:</h2>
+    <p>Flask web application that generate keys, encrypting and decrypting using RSA method.</p>
+    <p><b>Created by:</b> Thiago Ribeiro</p>
+    <p><b>Email:</b> trs57595@gmail.com</p>
+{% endblock %}
