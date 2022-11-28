@@ -16,7 +16,7 @@ To run locally, clone this repository, install the requirements in a virtualenv 
 - José Endson dos Santos
 - Edeilson da Costa
 
-## Using the API REST
+## Using the API
 ### Generate Keys
 
 To generate RSA keys, just send a POST request to https://encrypto-api-com.onrender.com/generate_key with a json like this:
