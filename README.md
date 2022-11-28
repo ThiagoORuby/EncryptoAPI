@@ -1,7 +1,12 @@
-# Encrypto API
+# Encrypto API and WEB APP
 
-A flask API to generate keys, encrypting and decrypting using RSA method.
+A flask API and Web App to generate keys, encrypting and decrypting using RSA method.
 
+To acess the Web App, just [click here](https://encrypto-api-com.onrender.com/generate-page)!
+
+To run locally, clone this repository, install the requirements in a virtualenv and use the command:
+
+ ```python run.py```
 #### Group members:
 
 - Thiago Ribeiro
@@ -9,7 +14,8 @@ A flask API to generate keys, encrypting and decrypting using RSA method.
 - José Endson dos Santos
 - Edeilson da Costa
 
-## Generate Keys
+## Using the API REST
+### Generate Keys
 
 To generate RSA keys, just send a POST request to https://encrypto-api-com.onrender.com/generate_key with a json like this:
 
@@ -21,7 +27,7 @@ To generate RSA keys, just send a POST request to https://encrypto-api-com.onren
 }
 ```
 
-## Encrypting
+### Encrypting
 
 To encrypting a message, just send a POST request to https://encrypto-api-com.onrender.com/encrypting with a json like this:
 
@@ -32,7 +38,7 @@ To encrypting a message, just send a POST request to https://encrypto-api-com.on
     "e" : "5"
 }
 ```
-## Decrypting
+### Decrypting
 
 To decrypting a crypted message, just send a POST request to https://encrypto-api-com.onrender.com/decrypting with a json like this:
 
