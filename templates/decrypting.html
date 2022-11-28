@@ -43,6 +43,11 @@
             {% if message %}
                 <p class = "mb-2 text-center">{{message}}</p>
             {% endif %}
+            {% if ok %}
+                <div class="text-center mt-4">
+                    <a class="btn btn-outline-success" href=/files/mensagem_decriptada.txt target="_blank"> Download </a>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
