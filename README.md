@@ -6,7 +6,9 @@ To acess the Web App, just [click here](https://encrypto-api-com.onrender.com/ge
 
 To run locally, clone this repository, install the requirements in a virtualenv and use the command:
 
- ```python run.py```
+ ```sh
+ python run.py
+ ```
 #### Group members:
 
 - Thiago Ribeiro
