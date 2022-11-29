@@ -13,7 +13,7 @@ class RSA:
     def _modinverse(self, a, b, x, y):
         if(a % b == 0): return y
         q = a // b
-        return self._modinverse(b, a % b, y, x - y*q)
+        return self._modinverse(b, self.fast_mod_exp(a, 1, b), y, x - y*q)
 
     def generatePublicKey(self, p, q, e):
         # Testar se p e q são primos
@@ -32,7 +32,7 @@ class RSA:
     
     def encrypting(self, mensage, n, e):
         code_m = [self._letras[i] for i in mensage.lower()]
-        cripted = [i**e % n for i in code_m]
+        cripted = [self.fast_mod_exp(i, e, n) for i in code_m]
         return self._listToString(cripted)
 
     def fast_mod_exp(self, b, exp, m):
